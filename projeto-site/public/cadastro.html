@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="cadastro.css">
+    <script src=funcaoo.js></script>
+    <title>Music</title>
+
+</head>
+<body> 
+
+    <div class="menu">
+      <nav>
+    <ul>
+        <li><a href="login.html"></a></li>
+        
+    </ul>
+      </nav>
+    </div>
+
+    <br>
+    <br>
+    <br>
+
+
+         <img id="img_instrumento" style="height: 80px" src="">
+         
+         <form id="form_cadastro" method="post" onsubmit="return cadastrar()">
+     </div>
+
+     <div class="divinha">
+     <div class="texto"><span>CADASTRE-SE</span><br></div>
+     <input name="nome"id= "nome" placeholder="Name" class="inp"> <br><br>
+     <input name="sobre_nome" id="sobrenome" placeholder="LastName" class="inp"> <br><br>
+     <input name="telefone" id="telefone" placeholder="cell phone" class="inp"> <br><br>
+     <input name="endereco" id="endereço" placeholder="Address" class="inp"> <br><br>
+     <input name="email" id="email" placeholder="E-mail" class="inp"> <br><br>
+     <input name="senha" type="password" id="senha" placeholder="Password" class="inp"> <br><br>
+     <input type="password" id="confirmarsenha" placeholder="Confirm Password" class="inp" > <br><br>
+     <button class="botao_cadastro">Register!</button>
+
+    </div>
+</form>
+
+<div id="curiosidade"></div>
+<div id="home"></div>
+
+
+    <!-- <img src="musica.jpg" alt="" style="position: absolute; z-index: -999;width:100vw; height:100vh; margin: 0px; padding: 0px"> -->
+
+</body>
+</html>
+
+<script>
+function Registrar() {
+        var login_email = email.value;
+        var login_senha = senha.value;
+        var login_confirmarsenha = confirmarsenha.value;
+    
+    if (login_email == '@musica.com.br' && login_senha == "musica" && login_confirmarsenha == `${login_senha}`)  {
+        window.location.href = "login.html";
+
+        alert('Usuário MUSICAL validado! :)');
+    } else {
+        alert('Usuário MUSICAL não validado! :(');
+    }    
+}
+    function cadastrar() {
+        var formulario = new URLSearchParams(new FormData(form_cadastro));
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            body: formulario
+        }).then(function (response){
+            if(response.ok){
+            console.log("cadastrou");
+            window.location.href='login.html';
+            }else{
+                console.log('Errou ao cadastrar!');
+                response.text().then(function(resposta){
+                })
+            }
+        });
+        return false;
+    }
+</script>

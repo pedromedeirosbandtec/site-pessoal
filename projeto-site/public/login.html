@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="login.css">
+    <script src=funcaoo.js></script>
+    <title>Music</title>
+
+</head>
+<body> 
+
+    <div class="menu">
+      <nav>
+    <ul>
+        <li><a href="cadastro.html">CADASTRE-SE</a></li>
+        <li><a href="#home">HOME</a></li>
+        <li><a href="#curiosidade">CURIOSIDADES</a></li>
+    </ul>
+      </nav>
+    </div>
+
+    <br>
+    <br>
+    <br>
+      
+     
+<form class="center container" id="form_login" method="post" onsubmit="return entrar()">
+     <div class="divinha">
+     <div class="texto"><span>LOGIN</span><br></div>
+     <input id="email" placeholder="E-mail" class="inp"> <br><br>
+     <input type="password" id="senha" placeholder="Password" class="inp"> <br><br>
+     <button class="botao_cadastro"onclick="Registrar()">Register!</button>
+</div>
+</form>
+
+<div id="home"></div>
+<div id="curiosidade">
+    <div class="divinha2">
+        <div class="texto2"><span>Escolha um Instrumento!</span></div>
+
+        <select id="tocar">
+            <option value="" id="escolha">Escolha!</option>
+            <option value="guitarra.png">Guitarra</option>
+            <option value="viola.png">Violão</option>
+            <option value="bateria.png">Bateria</option>
+            <option value="flauta.png">Flauta</option>
+            <option value="piano.png">Piano</option>
+            
+        </select> <br><br>
+
+        <button onclick="escolher()" class="botao_instrumento">Escolher</button><br>
+
+        <img id="img_instrumento" style="height: 80px" src="">
+           
+    </div>
+</div>
+
+
+
+
+    <!-- <img src="musica.jpg" alt="" style="position: absolute; z-index: -999;width:100vw; height:100vh; margin: 0px; padding: 0px"> -->
+
+</body>
+</html>
+
+<script>
+function Registrar() {
+        var login_email = email.value;
+        var login_senha = senha.value;
+    
+    if (login_email == '@musica.com.br' && login_senha == "musicalove")  {
+        window.location.href = "login.html";
+
+        alert('Usuário MUSICAL validado! :)');
+    } else {
+        alert('Usuário MUSICAL não validado! :(');
+    }    
+}
+
+
+function entrar() {
+        
+        var formulario = new URLSearchParams(new FormData(form_login));
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            body: formulario
+        }).then(resposta => {
+            
+            if (resposta.ok) {
+
+                resposta.json().then(json => {
+
+                    sessionStorage.login_usuario_meuapp = json.email;
+                    sessionStorage.nome_usuario_meuapp = json.nome;
+                    
+                });
+
+            } else {
+
+                console.log('Erro de login!');
+
+
+
+                response.text().then(texto => {
+                    console.error(texto);
+                    
+                });
+            }
+        });
+
+        return false;
+    }
+
+</script>
+

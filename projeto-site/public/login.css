@@ -1,0 +1,157 @@
+body{
+    background-image: url(musica.jpg);
+    background-size: 95vw;
+}
+
+
+.divinha{
+    text-align: center;
+    color: rgb(255, 255, 255);
+    width: 400px;
+    left:;
+    background-color: rgba(0, 0, 0, 0.274);
+    position: absolute;
+    margin-top: 5%;
+    border: 3px;
+    border-radius: 10px;
+    padding: 50px;   
+    outline-style: inherit;
+}
+
+.divinha input{
+    color: rgb(255, 255, 255);
+    font-weight: bold;   
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-bottom: 1px solid white;
+    }
+    
+    
+.inp{
+border: none;
+background-color: rgba(0, 0, 0, 0);
+outline: none;
+}
+
+.botao_cadastro {
+    border-radius: 10px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.116);
+    width: 300px;
+    height: 20px;
+    color: rgb(255, 255, 255);
+    outline: none;
+}
+
+.botao_cadastro:hover {
+    transform:scale(1.1);
+    transition: .2 ease-in-out;
+}
+
+.botao_instrumento {
+    border-radius: 10px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.116);
+    width: 300px;
+    height: 20px;
+    color: rgb(255, 255, 255);
+    outline: none;
+}
+
+.botao_instrumento:hover {
+    transform: scale(1.1);
+    transition: .2 ease-in-out;
+}
+
+#img_instrumento {
+    padding: 20px;
+    margin-left: -95%;
+}
+
+
+.texto {
+    font-size: 40px;
+    margin-top: -30px;
+ 
+}
+
+.texto2 {
+    font-size: 40px;
+    color: white;
+    margin-top: -30px;
+
+}
+
+.divinha2 {
+    text-align: center;
+    color: rgb(255, 255, 255);
+    width: 300px;
+    height: 250px;
+    background-color: rgba(0, 0, 0, 0.274);
+    position: absolute;
+    margin-top: 10%;
+    left: 500px;
+    border: 100px;
+    border-radius: 10px;
+    padding: 40px;
+}
+
+
+.menu nav ul{
+    width: 50vw;
+    display:flex;
+    margin: 0px auto;
+    justify-content: space-between;
+    padding: 10px;
+    min-height: 3vh;
+    align-items: center;
+}
+
+.menu {
+    width: 100vw;
+    border-radius: 10px;
+    background-color: #000;
+    font-family: 'Montserrat', sans-serif;
+    
+}
+.menu nav ul li a{
+    color: white;
+    text-decoration: none;
+ }
+
+ .menu nav ul li:hover {
+    transform: scale(1.1);
+    transition: .2 ease-in-out;
+ }
+
+ body {
+     background-image: url(musica.jpg);
+     background-attachment: fixed;
+     background-size: 100%;
+     background-repeat: no-repeat;
+     background-color: rgb(0, 0, 0);
+     padding: 0px;
+     margin: 0px;
+ }
+
+ #curiosidade {
+     height: 110vh;
+     width: 100vw;
+     position: relative;
+     margin-top: 470px;
+ }
+
+ #home {
+    height: 110vh;
+    width: 100vw;
+    position: relative;
+    margin-top: 470px;
+ }
+
+ html {
+     overflow-x: hidden;
+     scroll-behavior: smooth;
+     
+ }
